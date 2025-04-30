@@ -4,25 +4,45 @@
     right: 10px;
     left: 10px;
     bottom: 10px;
+    overflow: scroll;
 
     /* border: 5px solid peru; */
 }
 
 /* notes  */
-#stickynotes_container div {
+#stickynotes_container section {
   width: 500px;
   height: 500px;
-  max-width: 90vw;
+  max-width: 80vw;
   max-width: 90vw;
   margin: 10px;
   display: inline-block;
-  vertical-align: top;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   overflow: hidden;
+  word-wrap: break-word; /* Ensures long words break to fit within the container */
+  overflow-wrap: break-word; /* Ensures long words break to fit within the container */
+  overflow-y: scroll;
+  padding: 10px;
   text-align: center;
-  line-height: 150px; /* Center text vertically */
 }
+
+
+/* note_options */
+.note_options {
+    position: fixed;
+    top: 10px;
+    right: 15px;
+    display: flex;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 5;
+  }
+  .note_options div:hover {
+    opacity: 0.7;
+  }
+  
+
 
 #stickynotes_container .red {
   background-color: var(--color-red);
