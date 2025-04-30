@@ -18,7 +18,36 @@ pnpm run web4_testnet
 pnpm run web4_mainnet
 ```
 
+---
 
+### Features
+- 📝 Create, edit, and delete sticky notes
+- 💾 Offline-first functionality
+- 🔄 Automatic local storage saving (JSON format)
+- 📱 Responsive design for all devices
+- 🎨 Customizable note colors
+- 📌 Drag and drop notes to organize
+- 🔍 Search through notes
+- 📋 Copy note content to clipboard
+- ⚡ Fast and lightweight
+- 🔒 Privacy-focused (all data stays on your device)
+
+
+---
+
+### Design Details
+
+```json
+{ "color": "yellow", "note": "Hello World!" }
+```
+
+Color Options
+- #95D58D - green
+- #C9A8F4 - purple
+- #FFF8A3 - yellow
+- #8CA2F5 - blue
+- #FF8A8A - red
+- #FFC58A - orange
 
 
 
