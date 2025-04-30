@@ -3,3 +3,10 @@
 
 @import url(./app/CREATE_BUTTON.css);
 @import url(./app/stickynotes_container.css);
+@import url(./app/SEARCH.css);
+@import url(./app/SETTINGS.css);
+
+
+body {
+    text-align: center;
+}

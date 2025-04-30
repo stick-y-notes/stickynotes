@@ -7,3 +7,43 @@
 
     /* border: 5px solid peru; */
 }
+
+/* notes  */
+#stickynotes_container div {
+  width: 500px;
+  height: 500px;
+  max-width: 90vw;
+  max-width: 90vw;
+  margin: 10px;
+  display: inline-block;
+  vertical-align: top;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  line-height: 150px; /* Center text vertically */
+}
+
+#stickynotes_container .red {
+  background-color: var(--color-red);
+}
+
+#stickynotes_container .green {
+  background-color: var(--color-green);
+}
+
+#stickynotes_container .purple {
+  background-color: var(--color-purple);
+}
+
+#stickynotes_container .yellow {
+  background-color: var(--color-yellow);
+}
+
+#stickynotes_container .blue {
+  background-color: var(--color-blue);
+}
+
+#stickynotes_container .orange {
+  background-color: var(--color-orange);
+}
