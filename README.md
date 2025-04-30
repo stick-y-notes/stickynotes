@@ -26,7 +26,7 @@ pnpm run web4_mainnet
 - 🔄 Automatic local storage saving (JSON format)
 - 📱 Responsive design for all devices
 - 🎨 Customizable note colors
-- 📌 Drag and drop notes to organize
+- 📌 Pin notes to keep them at the top
 - 🔍 Search through notes
 - 📋 Copy note content to clipboard
 - ⚡ Fast and lightweight
