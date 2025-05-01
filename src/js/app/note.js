@@ -41,7 +41,8 @@ function createNote() {
     const store = transaction.objectStore("notes");
     const request = store.add(note);
 
-    request.onsuccess = function() {
+    request.onsuccess = function(event) {
+        note.id = event.target.result; // Assign the generated ID to the note
         console.log("Note added successfully:", note);
         displayNote(note);
     };
