@@ -31,6 +31,7 @@ pnpm run web4_mainnet
 - 📋 Copy note content to clipboard
 - ⚡ Fast and lightweight
 - 🔒 Privacy-focused (all data stays on your device)
+- 🔐 no lock in, export your notes and open in other apps
 
 
 ---
@@ -38,7 +39,7 @@ pnpm run web4_mainnet
 ### Design Details
 
 ```json
-{ "color": "yellow", "note": "Hello World!" }
+{ "color": "yellow", "pinned": "true" "note": "Hello World!" }
 ```
 
 Color Options

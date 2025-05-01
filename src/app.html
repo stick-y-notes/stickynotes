@@ -17,12 +17,31 @@
     <div id="CREATE_BUTTON">+</div>
     <div id="OPEN_SETTINGS_BUTTON">⚙️</div>
 
+    <!-- SETTINGS -->
+    <!-- Fixed center -->
+    <div id="SETTINGS">
+        <h2>SETTINGS</h2>
+        <form>
+            <div>
+                <input type="checkbox" id="bypass_index" name="bypass_index">
+                <label for="bypass_index">BYPASS INDEX PAGE</label>
+            </div>
+            <div>
+                <button type="button" id="export_notes">EXPORT NOTES AS JSON</button>
+            </div>
+            <div>
+                <button type="submit">save settings</button>
+            </div>
+        </form>
+    </div>
 
 
+    <!-- fixed top right -->
     <div class="note_options">
-        <div class="note_color">🎨</div>
-        <div class="note_delete">🗑️</div>
-        <div class="note_copy">📋</div>
+        <!-- <div class="note_pin">📌</div> -->
+        <div draggable="true" class="note_copy">📋</div>
+        <div draggable="true" class="note_color">🎨</div>
+        <div draggable="true" class="note_delete">🗑️</div>
     </div>
 
     <!-- future -->
@@ -32,25 +51,26 @@
 
     <!-- NOTES WILL BE IN article -->
     <article id="stickynotes_container">
+
         <!-- note sample -->
-        <section contenteditable class="red">
+        <!-- <section contenteditable class="red">
             Hello World!
         </section>
         <section contenteditable class="green">
-            <p>Hello World!</p>
+            Hello World!
         </section>
         <section contenteditable class="purple">
-            <p>Hello World!</p>
+            Hello World!
         </section>
         <section contenteditable class="yellow">
-            <p>Hello World!</p>
+            Hello World!
         </section>
         <section contenteditable class="blue">
-            <p>Hello World!</p>
+            Hello World!
         </section>
         <section contenteditable class="orange">
-            <p>Hello World!</p>
-        </section>
+            Hello World!
+        </section> -->
 
         <!-- each note will be in a section with the class of the color -->
     </article>
