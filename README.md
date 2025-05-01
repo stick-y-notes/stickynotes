@@ -39,7 +39,7 @@ pnpm run web4_mainnet
 ### Design Details
 
 ```json
-{ "color": "yellow", "note": "Hello World!" }
+{ "color": "yellow", "note": "Hello World!", "id": "1" }
 ```
 
 json feilds
