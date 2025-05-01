@@ -76,7 +76,9 @@ function saveNote(id, content) {
 
     request.onsuccess = function(event) {
         const note = event.target.result;
+        const color = Array.from(targetNote.classList).find(cls => colors.includes(cls));
         note.note = content;
+        note.color = color;
         store.put(note);
         console.log("Note saved successfully:", note);
     };
@@ -108,5 +110,26 @@ document.getElementById("CREATE_BUTTON").addEventListener("click", createNote);
 
 // Initialize the database
 initDB();
+
+
+function deleteNote(id) {
+    const transaction = db.transaction(["notes"], "readwrite");
+    const store = transaction.objectStore("notes");
+    const request = store.delete(id);
+
+    request.onsuccess = function(event) {
+        console.log("Note deleted successfully from database.");
+    };
+
+    request.onerror = function(event) {
+        console.error("Transaction error:", event.target.error);
+    };
+}
+
+if (className.includes('note_delete')) {
+    targetNote.remove();
+    deleteNote(targetNote.dataset.id);
+    console.log('Note deleted');
+}
 
 
