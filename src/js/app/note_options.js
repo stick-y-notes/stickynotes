@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (targetNote) {
             if (className.includes('note_copy')) {
                 navigator.clipboard.writeText(targetNote.innerText).then(() => {
-                    showAlert('Note content copied to clipboard');
+                    showAlert('note content copied to clipboard');
                 });
             } else if (className.includes('note_color')) {
                 const colors = ['red', 'green', 'purple', 'yellow', 'blue', 'orange'];
