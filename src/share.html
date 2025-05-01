@@ -21,13 +21,14 @@
 
     <h1>share your notes</h1>
 
+    <!-- 🟨 share_note_svg_div -->
     <div class="share_note_svg_div">
       <svg class="share_note_svg" width="1080" height="1080" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg" style="width: 500px; height: 500px; max-width: 80vw; margin: 20px;">
         <defs>
           <style>
             .svg_note_text {
               font-family: Arial;
-              font-size: 30px;
+              font-size: min(max(12px, calc(900px / (var(--text-length) / 20))), 60px);
               color: black;
               white-space: pre-wrap;
               word-wrap: break-word;
@@ -49,18 +50,7 @@
         <!-- Text inside the note -->
         <foreignObject x="90" y="90" width="900" height="900">
             <div xmlns="http://www.w3.org/1999/xhtml" style="width: 100%; height: 100%;">
-                <div class="svg_note_text">
-                  Your text will automatically wrap at this width. You can type as much as you want and it will create new lines as needed.
-                  Your text will automatically wrap at this width. You can type as much as you want and it will create new lines as needed.
-                  Your text will automatically wrap at this width. You can type as much as you want and it will create new lines as needed.
-                  Your text will automatically wrap at this width. You can type as much as you want and it will create new lines as needed.
-                  Your text will automatically wrap at this width. You can type as much as you want and it will create new lines as needed.
-                  Your text will automatically wrap at this width. You can type as much as you want and it will create new lines as needed.
-                  Your text will automatically wrap at this width. You can type as much as you want and it will create new lines as needed.
-                  Your text will automatically wrap at this width. You can type as much as you want and it will create new lines as needed.
-                  Your text will automatically wrap at this width. You can type as much as you want and it will create new lines as needed.
-                  Your text will automatically wrap at this width. You can type as much as you want and it will create new lines as needed.
-                </div>
+                <div contenteditable="true" class="svg_note_text">Your text will automatically wrap at this width.You can type as much as you want and it will create new lines as needed.</div>
             </div>
         </foreignObject>
         
@@ -68,6 +58,7 @@
         <text x="540" y="1040" fill="black" font-size="40" font-family="Arial" text-anchor="middle">stickynotes.near</text>
       </svg>
     </div>
+    <!-- 🟨 share_note_svg_div -->
 
     <button>SAVE</button>
 
@@ -91,6 +82,7 @@
 
   <!-- scipt  -->
   <script src="./js/hello.js"></script>
+  <script src="./js/share/share_svg_text_size.js"></script>
 
   <!-- sw  -->
   <script type="module">
