@@ -27,19 +27,7 @@
 }
 
 
-/* note_options */
-.note_options {
-    position: fixed;
-    top: 10px;
-    right: 15px;
-    display: flex;
-    gap: 5px;
-    cursor: pointer;
-    z-index: 5;
-  }
-  .note_options div:hover {
-    opacity: 0.7;
-  }
+
   
 
 
@@ -65,4 +53,37 @@
 
 #stickynotes_container .orange {
   background-color: var(--color-orange);
+}
+
+
+
+
+/* note_options */
+.note_options {
+  position: fixed;
+  top: 10px;
+  right: 15px;
+  bottom: auto;
+  left: auto;
+  display: flex;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 5;
+}
+.note_options div:hover {
+  opacity: 0.7;
+}
+
+/* Mobile responsive styles */
+@media screen and (max-width: 768px) {
+  .note_options {
+    top: auto;
+    bottom: 20px;
+    right: auto;
+    left: 20px;
+    gap: 15px;
+  }
+  .note_options div {
+    font-size: 40px;
+  }
 }
