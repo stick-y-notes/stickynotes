@@ -1,0 +1,10 @@
+.share_note_svg_div {
+    color: black;
+}
+
+.share_note_svg {
+    width: 500px;
+    height: 500px;
+    max-width: 80vw;
+    margin: 20px;
+}

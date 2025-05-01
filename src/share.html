@@ -1,54 +1,77 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>stickynotes</title>
-    <link rel="shortcut icon" type="image/x-icon" href="./img/icon.svg" />
-    <link rel="manifest" href="./manifest.json">
-    <meta name="theme-color" content="#ffffff">
 
-    <link rel="stylesheet" href="./css/main.css">
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>stickynotes</title>
+  <link rel="shortcut icon" type="image/x-icon" href="./img/icon.svg" />
+  <link rel="manifest" href="./manifest.json">
+  <meta name="theme-color" content="#ffffff">
 
-    
-    <article>
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/share.css">
+</head>
 
-      <section>
-        <h1>stickynotes</h1>
-      </section>
-  
-      
-
-      <section>
-        <p>copyright: 2025 by sleet.near</p>
-      </section>
-
-      </article>
-
-      <!-- Additional UI -->
-      <!-- <a href="./app.html"><button id="ENTER_BUTTON">ENTER APP</button></a> -->
+<body>
 
 
+  <article>
 
-      <!-- scipt  -->
-      <script src="./js/hello.js"></script>
 
-    <!-- sw  -->
-      <script type="module">
-        if ('serviceWorker' in navigator) {
-          window.addEventListener('load', () => {
-            navigator.serviceWorker.register(new URL('./sw.js', import.meta.url))
-              .then(registration => {
-                console.log('ServiceWorker registration successful');
-              })
-              .catch(err => {
-                console.log('ServiceWorker registration failed: ', err);
-              });
+    <h1>share your notes</h1>
+
+    <div class="share_note_svg_div">
+      <svg class="share_note_svg" width="1080" height="1080" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg">
+        <rect width="1080" height="1080" fill="white" />
+        <rect x="90" y="90" width="900" height="900" rx="50" ry="50" fill="#FFF8A3" />
+        <foreignObject x="140" y="140" width="800" height="800">
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <div contenteditable="true" style="width: 100%; height: 100%; font-family: Arial; font-size: 24px; overflow: auto; padding: 20px;">
+              Type your note here...
+            </div>
+          </div>
+        </foreignObject>
+      </svg>
+    </div>
+
+
+
+
+    <footer>
+      <p>
+        <a href="./index.html">home</a>
+        <a href="./app.html">app</a>
+        <a href="./share.html">share</a>
+      </p>
+      <p>copyright: 2025 by sleet.near</p>
+    </footer>
+
+  </article>
+
+  <!-- Additional UI -->
+  <!-- <a href="./app.html"><button id="ENTER_BUTTON">ENTER APP</button></a> -->
+
+
+
+  <!-- scipt  -->
+  <script src="./js/hello.js"></script>
+
+  <!-- sw  -->
+  <script type="module">
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register(new URL('./sw.js', import.meta.url))
+          .then(registration => {
+            console.log('ServiceWorker registration successful');
+          })
+          .catch(err => {
+            console.log('ServiceWorker registration failed: ', err);
           });
-        }
-      </script>
-  
-  </body>
+      });
+    }
+  </script>
+
+</body>
+
 </html>
