@@ -1,8 +1,10 @@
+// Define db as a global variable
+let db;
+
 // Function to initialize the database and load notes into the dropdown
 function initAndLoadNotes() {
     const dbName = "StickyNotesDB";
     const dbVersion = 1;
-    let db;
 
     const request = indexedDB.open(dbName, dbVersion);
 
