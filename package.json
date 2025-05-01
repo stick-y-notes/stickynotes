@@ -10,9 +10,11 @@
     "web4_testnet": "web4-deploy dist stickynotes.testnet --nearfs --yes",
     "web4_mainnet": "web4-deploy dist stickynotes.near --nearfs"
   },
-  "dependencies": {},
   "devDependencies": {
-    "parcel": "^2.14.0"
+    "@parcel/packager-raw-url": "2.14.4",
+    "@parcel/transformer-webmanifest": "2.14.4",
+    "parcel": "^2.14.0",
+    "svgo": "^3"
   },
   "packageManager": "pnpm@10.8.1"
 }

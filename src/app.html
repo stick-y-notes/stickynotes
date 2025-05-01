@@ -78,10 +78,10 @@
      <script src="./js/hello.js"></script>
      <script src="./js/app/note.js"></script>
      <script src="./js/app/note_options.js"></script>
-     <script>
+     <script type="module">
         if ('serviceWorker' in navigator) {
           window.addEventListener('load', () => {
-            navigator.serviceWorker.register('./sw.js')
+            navigator.serviceWorker.register(new URL('./sw.js', import.meta.url))
               .then(registration => {
                 console.log('ServiceWorker registration successful');
               })
