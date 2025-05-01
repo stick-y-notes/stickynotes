@@ -27,8 +27,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 targetNote.classList.remove(currentColor);
                 targetNote.classList.add(newColor);
             } else if (className.includes('note_delete')) {
-                targetNote.remove();
-                console.log('Note deleted');
+                const noteId = parseInt(targetNote.dataset.id);
+                if (noteId) {
+                    deleteNote(noteId);
+                    targetNote.remove();
+                    console.log('Note deleted');
+                }
             }
         }
     });

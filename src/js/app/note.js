@@ -53,12 +53,15 @@ function createNote() {
 }
 
 // Display a note in the DOM
+const colors = ['red', 'green', 'purple', 'yellow', 'blue', 'orange'];
+
 function displayNote(note) {
     const container = document.getElementById("stickynotes_container");
     const section = document.createElement("section");
     section.contentEditable = true;
     section.className = note.color;
     section.textContent = note.note;
+    section.dataset.id = note.id;
     container.appendChild(section);
 
     console.log("Note displayed:", note);
@@ -66,19 +69,30 @@ function displayNote(note) {
     section.addEventListener("input", function() {
         saveNote(note.id, section.textContent);
     });
+
+    // Save color changes
+    const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            if (mutation.attributeName === 'class') {
+                const color = Array.from(section.classList).find(cls => colors.includes(cls));
+                if (color) saveNote(note.id, section.textContent, color);
+            }
+        });
+    });
+    
+    observer.observe(section, { attributes: true });
 }
 
 // Save a note after editing
-function saveNote(id, content) {
+function saveNote(id, content, color) {
     const transaction = db.transaction(["notes"], "readwrite");
     const store = transaction.objectStore("notes");
     const request = store.get(id);
 
     request.onsuccess = function(event) {
         const note = event.target.result;
-        const color = Array.from(targetNote.classList).find(cls => colors.includes(cls));
         note.note = content;
-        note.color = color;
+        if (color) note.color = color;
         store.put(note);
         console.log("Note saved successfully:", note);
     };
