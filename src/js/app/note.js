@@ -15,11 +15,13 @@ function initDB() {
         db = event.target.result;
         if (!db.objectStoreNames.contains("notes")) {
             db.createObjectStore("notes", { keyPath: "id", autoIncrement: true });
+            console.log("Object store 'notes' created.");
         }
     };
 
     request.onsuccess = function(event) {
         db = event.target.result;
+        console.log("Database opened successfully.");
         loadNotes();
     };
 
@@ -37,10 +39,10 @@ function createNote() {
 
     const transaction = db.transaction(["notes"], "readwrite");
     const store = transaction.objectStore("notes");
-    store.add(note);
+    const request = store.add(note);
 
-    transaction.oncomplete = function() {
-        console.log("Note added:", note);
+    request.onsuccess = function() {
+        console.log("Note added successfully:", note);
         displayNote(note);
     };
 
@@ -58,6 +60,8 @@ function displayNote(note) {
     section.textContent = note.note;
     container.appendChild(section);
 
+    console.log("Note displayed:", note);
+
     section.addEventListener("input", function() {
         saveNote(note.id, section.textContent);
     });
@@ -73,7 +77,7 @@ function saveNote(id, content) {
         const note = event.target.result;
         note.note = content;
         store.put(note);
-        console.log("Note saved:", note);
+        console.log("Note saved successfully:", note);
     };
 
     request.onerror = function(event) {
@@ -89,6 +93,7 @@ function loadNotes() {
 
     request.onsuccess = function(event) {
         const notes = event.target.result;
+        console.log("Notes loaded successfully:", notes);
         notes.forEach(displayNote);
     };
 
