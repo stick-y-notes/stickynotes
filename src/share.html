@@ -19,11 +19,20 @@
   <article>
 
 
-    <h1>share your notes</h1>
+    <h1 class="share_h1">share your notes</h1>
+
+    <!-- Dropdown menu -->
+    <div class="share_note_dropdwon_div">
+      <label for="note_select">choose a note:</label>
+      <select name="note_select" id="note_select">
+        <option value="blank">choose a note</option>
+      </select>
+    </div>
 
     <!-- 🟨 share_note_svg_div -->
     <div class="share_note_svg_div">
-      <svg class="share_note_svg" width="1080" height="1080" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg" style="width: 500px; height: 500px; max-width: 80vw; margin: 20px;">
+      <svg class="share_note_svg" width="1080" height="1080" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg"
+        style="width: 500px; height: 500px; max-width: 80vw; margin: 20px;">
         <defs>
           <style>
             .svg_note_text {
@@ -44,18 +53,20 @@
             }
           </style>
         </defs>
-        <rect width="1080" height="1080" fill="white"/>
-        <rect x="90" y="90" width="900" height="900" rx="50" ry="50" fill="#FFF8A3"/>
-        
+        <rect width="1080" height="1080" fill="white" />
+        <rect x="90" y="90" width="900" height="900" rx="50" ry="50" fill="#FFF8A3" />
+
         <!-- Text inside the note -->
         <foreignObject x="90" y="90" width="900" height="900">
-            <div xmlns="http://www.w3.org/1999/xhtml" style="width: 100%; height: 100%;">
-                <div contenteditable="true" class="svg_note_text">Your text will automatically wrap at this width.You can type as much as you want and it will create new lines as needed.</div>
-            </div>
+          <div xmlns="http://www.w3.org/1999/xhtml" style="width: 100%; height: 100%;">
+            <div contenteditable="true" class="svg_note_text">Your text will automatically wrap at this width.You can
+              type as much as you want and it will create new lines as needed.</div>
+          </div>
         </foreignObject>
-        
+
         <!-- Text at the bottom -->
-        <text x="540" y="1040" fill="black" font-size="40" font-family="Arial" text-anchor="middle">stickynotes.near</text>
+        <text x="540" y="1040" fill="black" font-size="40" font-family="Arial"
+          text-anchor="middle">stickynotes.near</text>
       </svg>
     </div>
     <!-- 🟨 share_note_svg_div -->

@@ -1,6 +1,31 @@
+.share_h1 {
+    margin-bottom: 30px;
+}
 footer {
     border-top: 3px solid var(--color-green);
     margin-top: 20px;
 }
 
 
+
+
+
+.share_note_dropdwon_div label {
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.share_note_dropdwon_div select {
+    width: 200px;
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.share_note_dropdwon_div select:hover {
+    border-color: var(--color-blue);
+}
