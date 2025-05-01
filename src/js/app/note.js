@@ -140,10 +140,4 @@ function deleteNote(id) {
     };
 }
 
-if (className.includes('note_delete')) {
-    targetNote.remove();
-    deleteNote(targetNote.dataset.id);
-    console.log('Note deleted');
-}
-
 
