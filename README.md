@@ -59,6 +59,14 @@ Color Options
 - #FFC58A - orange
 
 
+---
+
+### Roadmap
+ideas
+- [x] basic functionality, create, edit, export
+- [ ] search
+- [ ] import
+- [ ] share
 
 ---
 
