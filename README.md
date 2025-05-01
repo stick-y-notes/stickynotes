@@ -39,8 +39,15 @@ pnpm run web4_mainnet
 ### Design Details
 
 ```json
-{ "color": "yellow", "pinned": "true" "note": "Hello World!" }
+{ "color": "yellow", "note": "Hello World!" }
 ```
+
+json feilds
+- "pinned": "true"
+- "color": "yellow"
+- "note": "Hello World!"
+
+
 
 Color Options
 - #95D58D - green
@@ -54,4 +61,4 @@ Color Options
 
 ---
 
-copyright 2025 by The SunShining
+copyright 2025 by sleet.near

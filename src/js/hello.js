@@ -1,5 +1,5 @@
 // 🟨 Sticky Note JS
-export const Sticky_Note_JS_message = "🟨 Welcome to Sticky Note! JavaScript is loaded.";
+const Sticky_Note_JS_message = "🟨 Welcome to Sticky Note! JavaScript is loaded.";
 
 
 // 🟨 Sticky Note JS
