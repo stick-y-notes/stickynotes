@@ -1,0 +1,17 @@
+{
+  "name": "Sticky Notes",
+  "short_name": "StickyNotes",
+  "description": "A simple and efficient sticky notes app with offline support",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "./img/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

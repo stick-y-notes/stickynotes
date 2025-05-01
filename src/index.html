@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>stickynotes</title>
     <link rel="shortcut icon" type="image/x-icon" href="./img/icon.svg" />
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#ffffff">
 
     <link rel="stylesheet" href="./css/main.css">
   </head>
@@ -23,7 +25,6 @@
           <br/>📝 Create, edit, and delete sticky notes
           <br/>💾 Offline-first functionality
           <br/>🔄 Automatic local storage saving (JSON format)
-          <br/>📱 Responsive design for all devices
           <br/>🎨 Customizable note colors
           <br/>📋 Copy note content to clipboard
           <br/>⚡ Fast and lightweight
@@ -45,6 +46,19 @@
 
       <!-- scipt  -->
       <script src="./js/hello.js"></script>
+      <script>
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+            navigator.serviceWorker.register('./sw.js')
+              .then(registration => {
+                console.log('ServiceWorker registration successful');
+              })
+              .catch(err => {
+                console.log('ServiceWorker registration failed: ', err);
+              });
+          });
+        }
+      </script>
   
   </body>
 </html>
