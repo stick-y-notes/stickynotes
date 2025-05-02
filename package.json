@@ -5,6 +5,7 @@
   "source": "src/index.html",
   "scripts": {
     "start": "parcel",
+    "dev": "python -m http.server --directory src 7027",
     "build": "rm -rf dist && parcel build",
     "clean": "rm -rf dist && rm -rf .parcel-cache",
     "web4_testnet": "web4-deploy src stickynotes.testnet --nearfs --yes",
