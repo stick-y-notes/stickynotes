@@ -43,12 +43,26 @@ document.getElementById('save_SVG_as_PNG_button').addEventListener('click', asyn
     const downloadUrl = URL.createObjectURL(pngBlob);
     
     if (isMobile()) {
-        // On mobile, open in new tab
-        window.open(downloadUrl, '_blank');
-        // Clean up after a delay
+        // Create a visible download link for mobile
+        const mobileLink = document.createElement('a');
+        mobileLink.href = downloadUrl;
+        mobileLink.target = '_blank';
+        mobileLink.textContent = '📱 Click here to open PNG in new tab';
+        mobileLink.style.display = 'block';
+        mobileLink.style.marginTop = '10px';
+        mobileLink.style.textAlign = 'center';
+        mobileLink.style.color = '#0066cc';
+        mobileLink.style.textDecoration = 'underline';
+        
+        // Insert the link after the PNG button
+        const pngButton = document.getElementById('save_SVG_as_PNG_button');
+        pngButton.parentNode.insertBefore(mobileLink, pngButton.nextSibling);
+
+        // Remove the link after a delay
         setTimeout(() => {
             URL.revokeObjectURL(downloadUrl);
-        }, 1000);
+            mobileLink.remove();
+        }, 30000); // Keep the link visible for 30 seconds
     } else {
         // On desktop, use download link
         const downloadLink = document.createElement('a');
