@@ -1,4 +1,4 @@
-const CACHE_NAME = 'stickynotes-v2';
+const CACHE_NAME = 'stickynotes-v1';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
