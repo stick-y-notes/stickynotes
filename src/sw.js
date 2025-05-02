@@ -3,12 +3,18 @@ const ASSETS_TO_CACHE = [
   './',
   './index.html',
   './app.html',
+  './about.html',
+  './share.html',
   './css/main.css',
   './css/style.css',
   './css/app.css',
   './js/hello.js',
   './js/app/note.js',
   './js/app/note_options.js',
+  './js/app/SETTINGS.js',
+  './js/app/SETTINGS_export_notes.js',
+  './js/share/share_svg_text_size.js',
+  './js/share/share_svg_load_text.js',
   './img/icon.svg',
   './manifest.json'
 ];
