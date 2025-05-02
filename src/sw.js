@@ -1,4 +1,4 @@
-const CACHE_NAME = 'stickynotes-v1';
+const CACHE_NAME = 'stickynotes-v2';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
@@ -44,9 +44,35 @@ self.addEventListener('activate', (event) => {
 
 // Fetch assets from cache or network
 self.addEventListener('fetch', (event) => {
+  // Check if this is a page navigation
+  const isPageNavigation = event.request.mode === 'navigate';
+
   event.respondWith(
     caches.match(event.request)
       .then(response => {
+        // For page navigation, always try network first to get fresh content
+        if (isPageNavigation) {
+          return fetch(event.request)
+            .then(networkResponse => {
+              // Cache the new response
+              const responseToCache = networkResponse.clone();
+              caches.open(CACHE_NAME)
+                .then(cache => {
+                  cache.put(event.request, responseToCache);
+                  // Trigger a full cache update
+                  if (navigator.onLine) {
+                    cache.addAll(ASSETS_TO_CACHE);
+                  }
+                });
+              return networkResponse;
+            })
+            .catch(() => {
+              // If network fails, fall back to cache
+              return response || new Response('Offline - No cached version available');
+            });
+        }
+
+        // For non-navigation requests, use cache-first strategy
         if (response) {
           return response;
         }
