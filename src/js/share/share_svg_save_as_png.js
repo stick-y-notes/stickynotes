@@ -1,3 +1,13 @@
+// Function to check if device is mobile
+function isMobile() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+// Show mobile warning message if on mobile device
+if (isMobile()) {
+    document.querySelector('.mobile_message').style.display = 'block';
+}
+
 document.getElementById('save_SVG_as_PNG_button').addEventListener('click', async function() {
     const svgElement = document.querySelector('.share_note_svg');
     const svgData = new XMLSerializer().serializeToString(svgElement);
@@ -31,17 +41,27 @@ document.getElementById('save_SVG_as_PNG_button').addEventListener('click', asyn
     });
 
     const downloadUrl = URL.createObjectURL(pngBlob);
-    const downloadLink = document.createElement('a');
-    downloadLink.href = downloadUrl;
-    downloadLink.download = 'stickynote.png';
-    downloadLink.style.display = 'none';
-    document.body.appendChild(downloadLink);
     
-    downloadLink.click();
-    
-    // Clean up
-    setTimeout(() => {
-        URL.revokeObjectURL(downloadUrl);
-        document.body.removeChild(downloadLink);
-    }, 100);
+    if (isMobile()) {
+        // On mobile, open in new tab
+        window.open(downloadUrl, '_blank');
+        // Clean up after a delay
+        setTimeout(() => {
+            URL.revokeObjectURL(downloadUrl);
+        }, 1000);
+    } else {
+        // On desktop, use download link
+        const downloadLink = document.createElement('a');
+        downloadLink.href = downloadUrl;
+        downloadLink.download = 'stickynote.png';
+        downloadLink.style.display = 'none';
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        
+        // Clean up
+        setTimeout(() => {
+            URL.revokeObjectURL(downloadUrl);
+            document.body.removeChild(downloadLink);
+        }, 100);
+    }
 });
