@@ -16,6 +16,9 @@ pnpm clean
 NEAR_SIGNER_KEY=ed25519:your_key_here
 pnpm run web4_testnet
 pnpm run web4_mainnet
+# web3 storgae as backup
+w3 space use TEMP
+w3 up src
 ```
 
 ---
