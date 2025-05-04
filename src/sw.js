@@ -1,4 +1,4 @@
-const CACHE_NAME = 'stickynotes-v1';
+const CACHE_NAME = 'stickynotes-v3';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
@@ -24,6 +24,7 @@ self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => cache.addAll(ASSETS_TO_CACHE))
+      .then(() => self.skipWaiting())
   );
 });
 
@@ -38,6 +39,9 @@ self.addEventListener('activate', (event) => {
           }
         })
       );
+    }).then(() => {
+      // Check for old service workers and unregister them
+      return self.clients.claim();
     })
   );
 });
