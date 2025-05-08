@@ -5,7 +5,7 @@
   "source": "src/index.html",
   "scripts": {
     "start": "parcel",
-    "dev": "python -m http.server --directory src 7027",
+    "dev": "live-server src --port=7027",
     "build": "rm -rf dist && parcel build",
     "clean": "rm -rf dist && rm -rf .parcel-cache",
     "web4_testnet": "web4-deploy src stickynotes.testnet --nearfs --yes",
@@ -15,7 +15,8 @@
     "@parcel/packager-raw-url": "2.14.4",
     "@parcel/transformer-webmanifest": "2.14.4",
     "parcel": "^2.14.0",
-    "svgo": "^3"
+    "svgo": "^3",
+    "live-server": "^1.2.2"
   },
   "packageManager": "pnpm@10.8.1"
 }
